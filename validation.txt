@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>  
+<body ng-app="myApp">
+
+<p>Try writing in the input field:</p>
+
+<form name="myForm">
+<input name="myInput" ng-model="myInput" required my-directive>
+</form>
+
+<span ng-show="myForm.myInput.$invalid && myForm.myInput.$touched">Invalid email</span>
+
+<script>
+var app = angular.module('myApp', []);
+app.directive('myDirective', function() {
+    return {
+        require: 'ngModel',
+        link: function(scope, element, attr, mCtrl) {
+            function myValidation(value) {
+                if ((value.indexOf("@") > 0) && ((value.indexOf(".")>(value.indexOf("@")+1))||(value.indexOf(".")<(value.indexOf("@")-1)))) {
+                if((value.indexOf("!") <0)){
+                    mCtrl.$setValidity('email', true);
+                } else {
+                    mCtrl.$setValidity('email', false);
+                }
+                return value;
+                }
+               
+                
+            }
+            mCtrl.$parsers.push(myValidation);
+        }
+    };
+});
+</script>
+
+
+</body>
+</html>

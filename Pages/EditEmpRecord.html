@@ -1,0 +1,132 @@
+<div class="clearfix" id="edit-modal-user-views">
+    <div class="modal-header model-grey-color">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="cancel()">
+            <span aria-hidden="true">×</span>
+        </button>
+        <h3 class="modal-title">{{regdata.FirstName}} {{regdata.LastName}}</h3>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label class="col-sm-3 control-label"> First Name
+                    <sup class="sup-color">*</sup>
+                </label>
+
+                <div class="col-sm-8">
+                    <input type="text" ng-model="regdata.FirstName" placeholder="Employee First Name" class="form-control" required>
+                </div>
+                <span class="help-button" uib-tooltip="Employee First Name" tooltip-placement="left" class="glyphicon glyphicon-question-sign"></span>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label"> Middle Name
+                
+                </label>
+
+                <div class="col-sm-8">
+                    <input type="text" ng-model="regdata.MiddleName" placeholder="Employee Middle Name" class="form-control" required>
+                </div>
+                <span class="help-button" uib-tooltip="Employee Middle Name" tooltip-placement="left" class="glyphicon glyphicon-question-sign">
+                    <i></i>
+                </span>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label"> Last Name
+                        <sup class="sup-color">*</sup>  
+                </label>
+
+                <div class="col-sm-8">
+                    <input type="text" ng-model="regdata.LastName" placeholder="Employee Middle Name" class="form-control" required>
+                </div>
+                <span class="help-button" uib-tooltip="Employee Last Name" tooltip-placement="left" class="glyphicon glyphicon-question-sign">
+                    <i></i>
+                </span>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label"> Email
+                    <sup class="sup-color">*</sup>
+                </label>
+
+                <div class="col-sm-8">
+                    <input type="email" ng-model="regdata.EmailID" placeholder="Employee Email ID" class="form-control" required>
+                </div>
+                <span class="help-button" uib-tooltip="Employee Email Address" tooltip-placement="left" class="glyphicon glyphicon-question-sign">
+                    <i></i>
+                </span>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label"> Joining Date
+                    <sup class="sup-color">*</sup>
+                </label>
+
+                <div class="col-sm-8">
+                    <input type="date" ng-model="regdata.JoiningDate" ng-change="$scope.regdata.JoiningDate=dt.toISOString()" placeholder="Employee Joining Date"
+                        class="form-control" required>
+                </div>
+                <span class="help-button" uib-tooltip="Employee Joining Date" tooltip-placement="left" class="glyphicon glyphicon-question-sign">
+                    <i></i>
+                </span>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label"> Designation
+                    <sup class="sup-color">*</sup>
+                </label>
+                <div class="col-sm-8">
+                    <select class="form-control" ng-model="regdata.DesignationID" ng-options="d.DesignationID as d.DesignationName for d in designationDetails ">
+                        <option value=""></option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label"> Location
+                    <sup class="sup-color">*</sup>
+                </label>
+                <div class="col-sm-8">
+                    <select class="form-control" ng-model="regdata.LocationID" ng-options="d.LocationID as d.LocationCity for d in locationDetails ">
+                        <option value=""></option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label"> Project
+                    <sup class="sup-color">*</sup>
+                </label>
+                <div class="col-sm-8">
+                    <select class="form-control" ng-model="regdata.ProjectID" ng-options="d.ProjectID as d.ProjectName for d in projectDetails ">
+                        <option value=""></option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label"> Currency
+                    <sup class="sup-color">*</sup>
+                </label>
+                <div class="col-sm-8">
+
+                    <select class="form-control" ng-model="regdata.CurrencyID" ng-options="d.CurrencyID as d.CurrencyName for d in Currency ">
+                        <option value=""></option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label"> Annual CTC
+                    <sup class="sup-color">*</sup>
+                </label>
+
+                <div class="col-sm-8">
+                    <input type="text" ng-model="regdata.AnnualCTC" placeholder="Employee Annual CTC" class="form-control" required>
+                </div>
+                <span class="help-button" uib-tooltip="Employee Annual CTC" tooltip-placement="left" class="glyphicon glyphicon-question-sign">
+                    <i></i>
+                </span>
+            </div>
+        </form>
+
+    </div>
+    <div class="modal-footer model-grey-color">
+        <button class="btn btn-success" ng-click="updateEmp(regdata)">
+            <i class="glyphicon glyphicon-floppy-save"></i> Update</button>
+        <button class="btn btn-danger" ng-click="cancel()">
+            <i class="glyphicon glyphicon-remove"></i> Close</button>
+    </div>
+</div>

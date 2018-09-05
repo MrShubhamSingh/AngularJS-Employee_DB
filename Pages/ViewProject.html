@@ -1,0 +1,46 @@
+<div class="panel panel-primary" style="margin:20px">
+    <div class="panel-heading">
+        <div>
+            <input type="text" style="color:black" name="searchProject" class="input"  ng-model="searchProject"
+             placeholder=" Enter Project Name " />
+     </div>
+    </div>
+    <div class="panel-body">
+        <table class="table">
+            <thead>
+                <tr>
+                   
+                    <th ng-click="reverse=!reverse;order('ProjectName', reverse)">Project Name</th>
+                    <th>Project Manager</th>
+                    <th>Project Start Date</th>
+                    <th>Project End Date</th>
+                    <th colspan="2">Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="e in regdata | filter:filterOnLocation">
+
+                    <td>{{e.ProjectName}}</td>
+                    <td>{{e.ProjectManager}}</td>
+                    <td>{{e.ProjectStartDate| date : 'dd/MM/yyyy'}}</td>
+                    <td>{{e.ProjectEndDate| date : 'dd/MM/yyyy'}}</td>
+    
+
+                    <td>
+              
+                    <div class="btn-group" role="group" aria-label="...">
+                        <button type="button" ng-click="ViewProjectRecord(e.ProjectID)" class="btn btn-default"><i class="glyphicon glyphicon-eye-open">
+                            </i></button>
+                        <button type="button" ng-click="EditProjectRecord(e.ProjectID)" class="btn btn-primary"><i class="glyphicon glyphicon-pencil">
+                            </i></button>
+                    </div>
+                </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+    </div>
+</div>

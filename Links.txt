@@ -1,0 +1,13 @@
+Get:
+ProjectDetails : http://empdbdev.southeastasia.cloudapp.azure.com/api/Project
+ProjectDetailsByName : http://empdbdev.southeastasia.cloudapp.azure.com/api/Project/ProjectName
+LocationDetails : http://empdbdev.southeastasia.cloudapp.azure.com/api/Location
+DesignationDetails : http://empdbdev.southeastasia.cloudapp.azure.com/api/Designation
+EmployeeDetails : http://empdbdev.southeastasia.cloudapp.azure.com/api/Employee
+EmployeeByName : http://empdbdev.southeastasia.cloudapp.azure.com/api/Employee/EmployeeName
+
+Post:
+http://empdbdev.southeastasia.cloudapp.azure.com/api/Employee/AddEmployee
+
+Delete: 
+http://empdbdev.southeastasia.cloudapp.azure.com/api/Employee/EmployeeID

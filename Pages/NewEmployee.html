@@ -1,0 +1,91 @@
+
+<div class="form-style-10">
+    <h1>Employee' Detail </h1>
+    <form name = SaveForm>
+        <div class="section">
+            <span>1</span>Employee ID</div>
+        <div class="inner-wrap">
+            <label>ID
+                <input type="text" ng-model="registration.ID" />
+            </label>
+        </div>
+
+        <div class="section">
+            <span>2</span>Name &amp; Email</div>
+        <div class="inner-wrap">
+            <label>First Name
+                <input type="text" ng-model="registration.FirstName" />
+            </label>
+            <label>Middle Name
+                <input type="text" ng-model="registration.MiddleName" />
+            </label>
+            <label>Last Name
+                <input type="text" ng-model="registration.LastName" />
+            </label>
+            <label>Email
+                <input id="email" type="text" ng-model="registration.EmailID" required  maxlength="60" ng-pattern="/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/"  name="email">      
+            </label>
+            <span style="color:red" ng-show="SaveForm.email.$touched && SaveForm.email.$invalid " class="ng-hide">   
+                Please Enter Valid  Email.!  </span>
+        </div>
+
+        <div class="section">
+            <span>3</span>CTC Details</div>
+        <div class="inner-wrap">
+            <label>Joining Date
+                <input type="date" ng-model="registration.JoiningDate" />
+            </label>
+            <label>Annual CTC
+                <input type="text" ng-model="registration.AnnualCTC" />
+            </label>
+        </div>
+
+        <div class="section">
+            <span>4</span>Designation &amp; Location</div>
+        <div class="inner-wrap">
+            <label>Designation
+                <div class="form-group">
+                    <label for="DesignationID" ></label>
+                    <select id= "DesignationID " class="form-control" ng-model="registration.DesignationID" ng-options="d.DesignationID as d.DesignationName for d in designationDetails ">
+                        <option value="" ></option>
+                    </select>
+                  </div>
+            </label>
+            <label>Currency
+                <div class="form-group">
+                    <label for="CurrencyID" ></label>
+                    <select class="form-control" id="CurrencyID" ng-model="registration.CurrencyID">
+                      <option disabled selected hidden>Please Select</option>
+                      <option value="1">INR</option>
+                      <option value="2">YEN</option>
+                      <option value="3">USD</option>
+                    </select>
+                 
+                  </div>
+            </label>
+            <label>Location
+                <div class="form-group">
+                    <label for="LocationID" ></label>
+                    <select id= "LocationID" class="form-control" ng-model="registration.LocationID" ng-options="d.LocationID as d.LocationCity for d in locationDetails ">
+                        <option value = "" ></option>
+                    </select>
+                 
+                  </div>
+            </label>
+            <label>Project
+                <div class="form-group">
+                    <label for="ProjectID" ></label>
+                    <select id="ProjectID"  class="form-control"  ng-model="registration.ProjectID" ng-options="d.ProjectID as d.ProjectName for d in projectDetails ">
+                        <option value="" ></option>
+                    </select>
+                 
+                  </div>
+            </label>
+
+
+        </div>
+        <div class="button-section">
+            <input type="button" value="{{btntext}}" ng-click="savedata(registration)" />
+        </div>
+    </form>
+</div>

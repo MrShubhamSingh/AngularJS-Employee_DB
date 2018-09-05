@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Employee DB</title>
+        <script type="text/javascript" src="./node_modules/angular/angular.min.js"></script>
+        <script src="./node_modules/angular-route/angular-route.min.js"></script>
+        <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="./LPfiles/LP.css">
+        <link rel="stylesheet" href="./Pages/NewEmployee.css">
+</head>
+
+<body>
+    <div class="page">
+        <header tabindex="0">
+            <img src="https://cdn.xebia.com/assets/logos/xebia_logo-large-transparent.png" style="display:inline; width:110px;">
+        </header>
+        <div id="nav-container">
+            <div class="bg"></div>
+            <div class="button" tabindex="0">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </div>
+            <div id="nav-content" tabindex="0">
+                <ul>
+                    <li>
+                        <a href="#">Employees</a>
+                    </li>
+                    <li>
+                        <a href="#!/NewEmployee">Add Employee</a>
+                    </li>
+                    <li>
+                        <a href="#0">View Project</a>
+                    </li>
+                    <li>
+                        <a href="#0">Update Project</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <main>
+            <div>
+                    <div ng-view ></div>
+            </div>
+        </main>
+    </div>
+</body>
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="./app.js"></script>
+<script type="text/javascript" src="./EmployeeDBCtrl.js"></script>
+<script type="text/javascript" src="./NewEmployeeCtrl.js"></script>
+<script type="text/javascript" src="./EmployeeDBServices.js"></script>
+
+</html>

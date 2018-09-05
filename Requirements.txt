@@ -1,0 +1,8 @@
+1- New Project - Project Manager dropdown as per designation
+
+2- Remove all the windows pop-up (Dialouge box required)
+
+3-Dynamic Update
+
+4- Handle Ajax Request exception two click
+
